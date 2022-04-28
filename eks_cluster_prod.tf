@@ -15,7 +15,7 @@ module "k8s_metrics_prod" {
 
 // node prod workload general
 module "k8s_metrics_prod_node_general" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"  
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -42,7 +42,7 @@ module "k8s_metrics_prod_node_general" {
 
 // node workload thanos query
 module "k8s_metrics_prod_node_thanos_query_shared" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -69,7 +69,7 @@ module "k8s_metrics_prod_node_thanos_query_shared" {
 
 // node env workload thanos receive and store shared AZ-A
  module "k8s_metrics_prod_node_thanos_receive_shared_az_a" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -96,7 +96,7 @@ module "k8s_metrics_prod_node_thanos_query_shared" {
 
 // node env workload thanos receive and store shared AZ-B
  module "k8s_metrics_prod_node_thanos_receive_shared_az_b" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -123,7 +123,7 @@ module "k8s_metrics_prod_node_thanos_query_shared" {
 
 // node env workload thanos receive and store shared AZ-C
  module "k8s_metrics_prod_node_thanos_receive_shared_az_c" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -150,7 +150,7 @@ module "k8s_metrics_prod_node_thanos_query_shared" {
 
 // node env workload monitoring and store shared
 module "k8s_metrics_prod_node_monitoring_shared" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
@@ -177,7 +177,7 @@ module "k8s_metrics_prod_node_monitoring_shared" {
 
 // node env workload Grafana and store shared
 module "k8s_metrics_env_node_grafana_shared" {
-  source                       = "./modules/eks-node"
+  source                       = "./modules/eks-worker-nodes"
   cluster_name                 = module.k8s_metrics_prod.cluster_name
   eks_version                  = "1.19"
   cluster_endpoint             = module.k8s_metrics_prod.cluster_endpoint
